@@ -1,0 +1,87 @@
+딥러닝을 공부할 때 크게 
+[ computer vision / 자연어 처리 NLP / 강화 학습 RL ]
+
+computer vision
+
+Classification / object detection / Instance segmentation
+
+image Classification = 이미지 분류 문제 
+DNN (Deep Neural Network)을 사용하여 전체 class의 확률 값 출력 
+
+object detection
+이미지 분류에 사물의 위치를 Bounding Box로 예측하는 regression 문제 포함 
+
+object detection = multi-labeled Classification and Bounding box regression
+
+
+각각의 논문 정리 및 코드 작성으로 object detect 공부 필요
+[R-CNN, OverFeat, Fast R-CNN, Faster R-CNN, OHEM, YOLO v1, SSD,
+ R-FCN, YOLO v2, FPN, RetinaNet, Mask R-CNN, YOLO v3 REfineDet, M2Det]
+
+
+sliding Window 
+>> 다양한 스케일의 window를 사진에 적용하여 score 계산 
+
+selective search 
+>> 영상의 계층적 구조를 활용, 탐색, 그룹화 객체의 위치를 proposal
+
+
+object detect 방향 
+
+
+2-Stage Object Detector
+
+Resion Proposal > Classification(detection)
+
+[비교적 느리지만 정확]
+
+1-Stage Object Detector
+Resion Proposal + Classification(detection) 한번에 수행
+[빠르지만 비교정 부정확 (2-SOD 보다)]
+
+
+
+성능 -- "정확도" 지표
+
+정답과 예측 결과 비교
+Ground Truth // Prediction
+
+이미지의 각 object에 해당하는 Bounding Box, Box 안의 class
+(object and Bounding Box Location)
+
+IOU(InterSection Over Union)
+
+Area of Overlap / Area of Union 
+교집합 / 합집합
+
+==> 일치율 측정 일반적으로  0.5(threshold)를 넘으면 일치
+
+
+[ Precision ]
+
+>> 얼마나 정확한지
+
+Precision = TP / ( TP + FP )
+TP = True Positive (진실 긍정)
+FP = False Positive (거짓 긍정)
+
+[ Recall ]
+
+>> 얼마나 잘 검출 했는지 
+
+Precision = TP / ( TP + FN )
+TP = True Positive (진실 긍정)
+FP = False Positive (진실 부정)
+
+Precision, Recall - 반비례 ( 검출량이 증가할 수록 정확도가 감소 )
+
+[ AP (Average Precision) || mAP(mean Average Precision) ]
+
+AP (Average Precision) 
+Recall을 0 부터 1까지 증가시켰을때 (0.1 단위)  
+각 단위 마다 Precison 값들의 평균이 AP이다.(총 11 개의 Recall -- 검출 정확성을 높혀가면서 확인)
+
+mAP(mean Average Precision)
+AP의 전체 클래스에 대한 평균값 
+
+FPS 값 에 따라도 판단

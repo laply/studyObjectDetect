@@ -16,7 +16,7 @@ object detection = multi-labeled Classification and Bounding box regression
 
 각각의 논문 정리 및 코드 작성으로 object detect 공부 필요
 [R-CNN, OverFeat, Fast R-CNN, Faster R-CNN, OHEM, YOLO v1, SSD,
- R-FCN, YOLO v2, FPN, RetinaNet, Mask R-CNN, YOLO v3 REfineDet, M2Det]
+ R-FCN, YOLO v2, FPN, RetinaNet, Mask R-CNN, YOLO v3, REfineDet, M2Det]
 
 
 sliding Window 
